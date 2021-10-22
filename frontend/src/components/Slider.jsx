@@ -1,6 +1,8 @@
+import { useState } from "react";
 import styled from "styled-components";
 import ArrowRightIcon from "@mui/icons-material/ArrowRight";
 import ArrowLeftIcon from "@mui/icons-material/ArrowLeft";
+import { data } from "../Data";
 
 const Container = styled.div`
   width: 100%;
@@ -24,11 +26,13 @@ const Arrow = styled.div`
   left: ${(props) => props.direction === "left" && "10px"};
   right: ${(props) => props.direction === "right" && "10px"};
   opacity: 0.5;
+  z-index: 2;
 `;
 
 const Wrapper = styled.div`
   height: 100%;
- tra
+  transition: all 1.5s ease;
+  transform: translate(${(props) => props.slideIndex * -100 + "vw"});
 `;
 const Slide = styled.div`
   width: 100vw;
@@ -42,6 +46,7 @@ const ImgContainer = styled.div`
 `;
 const Image = styled.img`
   width: 80%;
+  height: 80vh;
 `;
 const InfoContainer = styled.div`
   flex: 1;
@@ -63,80 +68,35 @@ const Button = styled.button`
 `;
 
 const Slider = () => {
+  const [slideIndex, setslideIndex] = useState(0);
+  const handleClick = (direction) => {
+    let len = 0;
+    if (direction === "right")
+      len = slideIndex + 1 < data.length ? slideIndex + 1 : 0;
+    else if (direction === "left")
+      len = slideIndex - 1 < 0 ? data.length - 1 : slideIndex - 1;
+    setslideIndex(len);
+  };
   return (
     <Container>
-      <Arrow direction="left">
+      <Arrow direction="left" onClick={() => handleClick("left")}>
         <ArrowLeftIcon />
       </Arrow>
-      <Wrapper>
-        <Slide>
-          <ImgContainer>
-            <Image
-              alt="slider"
-              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRFif9g4tebrQaQvM658dnaBRT8jkgSKiqZag&usqp=CAU"
-            />
-          </ImgContainer>
-          <InfoContainer>
-            <Title>SUMMER SALE</Title>
-            <Desc>
-              DON'T COMPROMISE ON STYLE! GET FLAT 30% OFF FOR NEW ARRIVALS.
-            </Desc>
-            <Button>SHOP NOW</Button>
-          </InfoContainer>
-        </Slide>
-      </Wrapper>
-      <Wrapper>
-        <Slide>
-          <ImgContainer>
-            <Image
-              alt="slider"
-              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRFif9g4tebrQaQvM658dnaBRT8jkgSKiqZag&usqp=CAU"
-            />
-          </ImgContainer>
-          <InfoContainer>
-            <Title>WINTER SALE</Title>
-            <Desc>
-              DON'T COMPROMISE ON STYLE! GET FLAT 30% OFF FOR NEW ARRIVALS.
-            </Desc>
-            <Button>SHOP NOW</Button>
-          </InfoContainer>
-        </Slide>
-      </Wrapper>
-      <Wrapper>
-        <Slide>
-          <ImgContainer>
-            <Image
-              alt="slider"
-              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRFif9g4tebrQaQvM658dnaBRT8jkgSKiqZag&usqp=CAU"
-            />
-          </ImgContainer>
-          <InfoContainer>
-            <Title>RAINY SALE</Title>
-            <Desc>
-              DON'T COMPROMISE ON STYLE! GET FLAT 30% OFF FOR NEW ARRIVALS.
-            </Desc>
-            <Button>SHOP NOW</Button>
-          </InfoContainer>
-        </Slide>
-      </Wrapper>
-      <Wrapper>
-        <Slide>
-          <ImgContainer>
-            <Image
-              alt="slider"
-              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRFif9g4tebrQaQvM658dnaBRT8jkgSKiqZag&usqp=CAU"
-            />
-          </ImgContainer>
-          <InfoContainer>
-            <Title>SPRING SALE</Title>
-            <Desc>
-              DON'T COMPROMISE ON STYLE! GET FLAT 30% OFF FOR NEW ARRIVALS.
-            </Desc>
-            <Button>SHOP NOW</Button>
-          </InfoContainer>
-        </Slide>
-      </Wrapper>
-      <Arrow direction="right">
+      {data.map((item) => (
+        <Wrapper slideIndex={slideIndex}>
+          <Slide>
+            <ImgContainer>
+              <Image alt="slider" src={item.img} />
+            </ImgContainer>
+            <InfoContainer>
+              <Title>{item.title}</Title>
+              <Desc>{item.desc}</Desc>
+              <Button>SHOP NOW</Button>
+            </InfoContainer>
+          </Slide>
+        </Wrapper>
+      ))}
+      <Arrow direction="right" onClick={() => handleClick("right")}>
         <ArrowRightIcon />
       </Arrow>
     </Container>
