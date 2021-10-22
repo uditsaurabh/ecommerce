@@ -82,8 +82,8 @@ const Slider = () => {
       <Arrow direction="left" onClick={() => handleClick("left")}>
         <ArrowLeftIcon />
       </Arrow>
-      {data.map((item) => (
-        <Wrapper slideIndex={slideIndex}>
+      {data.map((item, index, arr) => (
+        <Wrapper key={index} slideIndex={slideIndex}>
           <Slide>
             <ImgContainer>
               <Image alt="slider" src={item.img} />

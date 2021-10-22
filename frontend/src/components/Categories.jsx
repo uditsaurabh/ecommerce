@@ -10,7 +10,7 @@ const Categories = () => {
   return (
     <Container>
       {categories.map((item) => (
-        <CategoryItem img={item.img} title={item.title} />
+        <CategoryItem key={item.id}img={item.img} title={item.title} />
       ))}
     </Container>
   );
