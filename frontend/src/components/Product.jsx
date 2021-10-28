@@ -4,12 +4,15 @@ import SearchOutlinedIcon from "@mui/icons-material/SearchOutlined";
 import FavoriteBorderOutlinedIcon from "@mui/icons-material/FavoriteBorderOutlined";
 
 const Icons = styled.div`
-  top: 15%;
+  left: 35%;
+  top: 12%;
+  cursor: pointer;
 `;
 const Container = styled.div`
   height: 50vh;
-  width: 100px;
-
+  width: 20vw;
+  border-radius: 50%;
+  background-color: #f8f8df;
   position: relative;
   ${Icons} {
     display: none;
@@ -17,7 +20,8 @@ const Container = styled.div`
   &:hover ${Icons} {
     display: flex;
     position: absolute;
-    flex-direction: column;
+    flex-direction: row;
+    transform: scale(1.1);
   }
 `;
 const Image = styled.img`

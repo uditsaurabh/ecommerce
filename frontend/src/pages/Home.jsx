@@ -2,8 +2,10 @@ import React from "react";
 import Announcements from "../components/Announcements";
 import Categories from "../components/Categories";
 import Navbar from "../components/Navbar";
+import Newsletter from "../components/Newsletter";
 import ProductList from "../components/ProductList";
 import Slider from "../components/Slider";
+import Footer from "../components/Footer";
 
 const Home = () => {
   return (
@@ -13,6 +15,8 @@ const Home = () => {
       <Slider />
       <Categories />
       <ProductList />
+      <Newsletter />
+      <Footer />
     </div>
   );
 };
