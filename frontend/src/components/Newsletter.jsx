@@ -10,13 +10,15 @@ const Container = styled.div`
   flex-direction: column;
 `;
 
-const Title = styled.h1``;
+const Title = styled.h1`
+  font-weight: bolder;
+`;
 
 const Desc = styled.div``;
 
 const InputContainer = styled.div`
   width: 40vw;
-  height: 5vh;
+  height: 7vh;
   border: 1px solid lightgrey;
   background-color: white;
   display: flex;

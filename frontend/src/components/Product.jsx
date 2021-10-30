@@ -4,8 +4,8 @@ import SearchOutlinedIcon from "@mui/icons-material/SearchOutlined";
 import FavoriteBorderOutlinedIcon from "@mui/icons-material/FavoriteBorderOutlined";
 
 const Icons = styled.div`
-  left: 35%;
-  top: 12%;
+  left: 38%;
+  top: 18%;
   cursor: pointer;
 `;
 const Container = styled.div`

@@ -2,9 +2,14 @@ import styled from "styled-components";
 import FacebookIcon from "@mui/icons-material/Facebook";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import TwitterIcon from "@mui/icons-material/Twitter";
+import PhoneInTalkIcon from "@mui/icons-material/PhoneInTalk";
+import MarkEmailUnreadIcon from "@mui/icons-material/MarkEmailUnread";
+import LocationOnIcon from "@mui/icons-material/LocationOn";
+
 const Container = styled.div`
   display: flex;
   justify-content: space-between;
+  text-align: center;
 `;
 const Left = styled.div`
   flex: 1;
@@ -31,6 +36,7 @@ const Center = styled.div`
 `;
 const Title = styled.h3`
   margin-bottom: 30px;
+  font-weight: bolder;
 `;
 const List = styled.ul`
   margin: 0;
@@ -45,6 +51,13 @@ const ListItem = styled.li`
 const Right = styled.div`
   flex: 1;
 `;
+const ContactItem = styled.div`
+  margin-top: 10px;
+  display: flex;
+  justify-content: cenetr;
+  align-items: center;
+`;
+
 const Footer = () => {
   return (
     <Container>
@@ -82,7 +95,21 @@ const Footer = () => {
           <ListItem>Terms</ListItem>
         </List>
       </Center>
-      <Right></Right>
+      <Right>
+        <Title>Contact</Title>
+        <ContactItem>
+          <LocationOnIcon style={{ marginRight: "10px" }} />
+          672, Avanue Street,New york,10091
+        </ContactItem>
+        <ContactItem>
+          <PhoneInTalkIcon style={{ marginRight: "10px" }} />
+          +1 988076452
+        </ContactItem>
+        <ContactItem>
+          <MarkEmailUnreadIcon style={{ marginRight: "10px" }} />
+          sgpr@itc.com
+        </ContactItem>
+      </Right>
     </Container>
   );
 };

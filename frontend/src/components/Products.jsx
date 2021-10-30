@@ -10,7 +10,7 @@ const Container = styled.div`
   flex-wrap: wrap;
 `;
 
-const ProductList = () => {
+const Products = () => {
   return (
     <Container>
       {popularProducts.map(({ id, img }) => (
@@ -20,4 +20,4 @@ const ProductList = () => {
   );
 };
 
-export default ProductList;
+export default Products;
