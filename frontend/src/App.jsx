@@ -1,12 +1,7 @@
-import ProductDescription from "./pages/ProductDescription";
-import Login from "./pages/Login";
+import Cart from "./pages/Cart";
 
 function App() {
-  return (
-    <div>
-      <Login />
-    </div>
-  );
+  return <Cart />;
 }
 
 export default App;
