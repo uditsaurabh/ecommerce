@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { mobile } from "../responsive";
 
 const SubHeader = styled.div`
   display: flex;
@@ -20,6 +21,7 @@ const Container = styled.div`
     position: absolute;
     flex-direction: column;
   }
+  
 `;
 const Image = styled.img`
   width: 100%;

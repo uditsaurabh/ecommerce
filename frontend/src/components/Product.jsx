@@ -2,6 +2,7 @@ import styled from "styled-components";
 import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
 import SearchOutlinedIcon from "@mui/icons-material/SearchOutlined";
 import FavoriteBorderOutlinedIcon from "@mui/icons-material/FavoriteBorderOutlined";
+import { mobile } from "../responsive";
 
 const Icons = styled.div`
   left: 38%;
@@ -23,6 +24,7 @@ const Container = styled.div`
     flex-direction: row;
     transform: scale(1.1);
   }
+  ${mobile({ width: "75vw" })}
 `;
 const Image = styled.img`
   width: 100%;

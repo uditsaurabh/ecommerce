@@ -3,6 +3,7 @@ import styled from "styled-components";
 import ArrowRightIcon from "@mui/icons-material/ArrowRight";
 import ArrowLeftIcon from "@mui/icons-material/ArrowLeft";
 import { data } from "../Data";
+import { mobile } from "../responsive";
 
 const Container = styled.div`
   width: 100%;
@@ -53,6 +54,7 @@ const InfoContainer = styled.div`
 `;
 const Title = styled.h1`
   font-size: 70px;
+  ${mobile({ fontSize: "30px" })}
 `;
 const Desc = styled.p`
   margin: 50px 0px;

@@ -5,14 +5,18 @@ import TwitterIcon from "@mui/icons-material/Twitter";
 import PhoneInTalkIcon from "@mui/icons-material/PhoneInTalk";
 import MarkEmailUnreadIcon from "@mui/icons-material/MarkEmailUnread";
 import LocationOnIcon from "@mui/icons-material/LocationOn";
+import { mobile } from "../responsive";
 
 const Container = styled.div`
+  background-color: #e7cbcb14;
   display: flex;
   justify-content: space-between;
   text-align: center;
+  ${mobile({ flexDirection: "column" })}
 `;
 const Left = styled.div`
   flex: 1;
+  ${mobile({ border: "1px solid #ecd5d533" })}
 `;
 const Logo = styled.h1``;
 const Desc = styled.p``;
@@ -33,6 +37,7 @@ const SocialIcon = styled.div`
 `;
 const Center = styled.div`
   flex: 1;
+  ${mobile({ border: "1px solid #ecd5d533" })}
 `;
 const Title = styled.h3`
   margin-bottom: 30px;
@@ -50,11 +55,12 @@ const ListItem = styled.li`
 `;
 const Right = styled.div`
   flex: 1;
+  ${mobile({ alignItems: "center", border: "1px solid #ecd5d533" })}
 `;
 const ContactItem = styled.div`
   margin-top: 10px;
   display: flex;
-  justify-content: cenetr;
+  justify-content: center;
   align-items: center;
 `;
 
