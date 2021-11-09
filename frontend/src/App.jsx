@@ -1,7 +1,8 @@
-import Cart from "./pages/Cart";
+import Register from "./pages/Register";
 
 function App() {
-  return <Cart />;
+  console.log("this is app register page ********");
+  return <Register />;
 }
 
 export default App;

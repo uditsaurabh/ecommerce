@@ -6,10 +6,12 @@ import Footer from "../components/Footer";
 import styled from "styled-components";
 import AddIcon from "@mui/icons-material/Add";
 import RemoveIcon from "@mui/icons-material/Remove";
+import { mobile } from "../responsive";
 
 const Wrapper = styled.div`
   display: flex;
   gap: 2rem;
+  ${mobile({ flexDirection: "column" })}
 `;
 const ImgContainer = styled.div`
   border: 1px solid lightgrey;
